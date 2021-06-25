@@ -16,7 +16,7 @@ export const Chat = () => {
   const [user] = useAuthState(auth);
   const [messageValue, setMessageValue] = useState('');
   const [messages, loading] = useCollectionData(
-    firestore.collection('messages')
+    firestore.collection('messages').orderBy('createdAt')
     )
 
   async function sendMessage() {
@@ -34,6 +34,8 @@ export const Chat = () => {
   if(loading) {
     return <Loader/>
   }
+
+  console.log(messages, 'mes')
 
   return (
     <Container>
