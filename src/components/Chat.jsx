@@ -35,8 +35,6 @@ export const Chat = () => {
     return <Loader/>
   }
 
-  console.log(messages, 'mes')
-
   return (
     <Container>
       <Grid 
